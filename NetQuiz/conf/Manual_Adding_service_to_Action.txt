@@ -1,0 +1,30 @@
+Adding a new service to an action
+
+Example: 
+Add QuestionService to QuizAction
+
+1. Add new private class variable to QuizAction with setter method:
+	private QuestionService questionService;
+	
+	public void setQuestionService(QuestionService questionService) {
+	        this.questionService = questionService;
+    	}
+
+2. Modify QuizActionTest Unit test
+	1.1 Add new private class variable:
+		private QuestionService questionService;
+		
+	1.2 Mock object in setUp method:
+		questionService = (QuestionService)mock(QuestionService.class);
+	
+	1.3 Set service to Action in setUp() method:
+		quizAction.setQuestionService(questionService);
+		
+	1.4 In the tests where this service is used then methods invoked have to be specified (Look for examples in the code). 
+	    Make sure you use startVerification() method in the test, for more info google RMock
+	
+3. Modify Spring file so that Actions is linked to the service
+
+    <bean id="quizAction" scope="prototype" class="se.netlight.netquiz.quiz.action.QuizAction">
+        <property name="questionService" ref="questionService"></property>
+    </bean>

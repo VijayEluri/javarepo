@@ -1,0 +1,9 @@
+This SQL queries can be run to create some initial users, Database tables are created when the application is compiled, so
+there's no need to create Tables with an SQL
+
+
+insert into `users` (`ID`, `USERNAME`, `PASSWORD`, `ENABLED`) values(null,'miguel','1234','Y');
+insert into `users` (`ID`, `USERNAME`, `PASSWORD`, `ENABLED`) values(null,'peter','1234','Y');
+
+insert into `authorities` (`ID`,`USERNAME`, `AUTHORITY`) values(null,'miguel','ROLE_ADMIN');
+insert into `authorities` (`ID`,`USERNAME`, `AUTHORITY`) values(null,'peter','ROLE_ADMIN');

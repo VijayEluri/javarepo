@@ -1,0 +1,35 @@
+Steps to add a new service that persists MyModel object to the Database
+
+1. Create Interface and implementation in corresponding package. I.e:
+
+	Interface:
+		se.netlight.quiz.service.MyModelService
+	Implementation:
+		se.netlight.quiz.service.MyModelServiceSprHibImlp
+		
+2. Create Unit test using In Memory Database
+
+		se.netlight.quiz.service.MyModelServiceSprHibImlpTest
+		
+	2.1 Add new annotated class to se.netlight.utils.InMemSessionFactoryGenerator
+		
+3. Modify Spring file: applicationContext-netquiz.xml to add new service
+
+    <bean id="questionService" class="se.netlight.netquiz.quiz.service.QuestionServiceSprHibImpl" >
+        <constructor-arg ref="sessionFactory"/>        
+    </bean>
+    
+4. Add annotated class to sessionFactory bean in applicationContext-netquiz.xml
+
+Following steps are show how to use the service created in an Action class:
+
+5. Create Action class:
+		se.netlight.quiz.action.MyModelAction
+		
+6. Create Action Test class:
+		se.netlight.quiz.action.MyModelActionTest
+			
+7. Add action bean to Spring file: applicationContext-netquiz.xml  
+    <bean id="questionAction" scope="prototype" class="se.netlight.netquiz.quiz.action.QuestionAction">
+        <constructor-arg ref="questionService" />
+    </bean>

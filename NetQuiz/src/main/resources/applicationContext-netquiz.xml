@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+         
+    <!--<context:component-scan base-package="se.netlight"/>-->
+    <!-- Spring support for JSR-250 annotations: @Resource, @PostConstruct, @PreDestroy-->
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+
+    <!--
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>  -->
+    
+    <!-- Config replacer-->
+    <bean id="propertyConfigurer" class="se.netlight.netquiz.utils.HostPrecedingPropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:/applicationContext-netquiz.properties"/>
+    </bean> 
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+    
+    <!-- SERVICES -->
+    <bean id="userService" class="se.netlight.netquiz.user.service.UserServiceSprHibImpl" >
+        <constructor-arg ref="sessionFactory"/>
+    </bean>
+    <bean id="quizService" class="se.netlight.netquiz.quiz.service.QuizServiceSprHibImpl" >
+        <constructor-arg ref="sessionFactory"/>        
+    </bean>
+    <bean id="questionService" class="se.netlight.netquiz.quiz.service.QuestionServiceSprHibImpl" >
+        <constructor-arg ref="sessionFactory"/>
+    </bean>
+    <bean id="participantService" class="se.netlight.netquiz.quiz.service.ParticipantServiceSprHibImpl" >
+        <constructor-arg ref="sessionFactory"/>        
+    </bean>
+    
+    
+    <bean id="emailFromRebelService" class="se.netlight.netquiz.user.service.EmailFromRebelServiceSprHibImpl" >
+        <constructor-arg ref="sessionFactory"/>
+    </bean>
+    
+    <!-- Hibernate Session Factory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>       
+        <property name="hibernateProperties">
+            <value>
+                hibernate.dialect=org.hibernate.dialect.MySQLDialect
+                hibernate.show_sql=true
+                hibernate.hbm2ddl.auto=update
+            </value>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <value>se.netlight.netquiz.user.model.User</value>
+                <value>se.netlight.netquiz.user.model.Authority</value>
+                <value>se.netlight.netquiz.quiz.model.Pair</value>
+                <value>se.netlight.netquiz.quiz.model.Participant</value>
+                <value>se.netlight.netquiz.quiz.model.Question</value>
+                <value>se.netlight.netquiz.quiz.model.Quiz</value>
+                <value>se.netlight.netquiz.user.model.EmailFromRebel</value>
+            </list>
+        </property>
+    </bean>
+    
+    <!-- Data source for either JPA or Hibernate -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>    
+    
+    <!--
+    <bean id="transactionManager"
+          class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+    
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    -->
+    
+    <!-- ACTIONS -->
+    <bean id="userAction" scope="prototype" class="se.netlight.netquiz.user.action.UserAction"/>
+    <bean id="quizAction" scope="prototype" class="se.netlight.netquiz.quiz.action.QuizAction"/>
+    <bean id="importRebelUsers" scope="prototype" class="se.netlight.netquiz.user.action.ImportRebelUsers"/>
+    <bean id="questionAction" scope="prototype" class="se.netlight.netquiz.quiz.action.QuestionAction"/>    
+    <bean id="quizEvaluatorAction" scope="prototype" class="se.netlight.netquiz.quiz.action.QuizEvaluatorAction"/>
+    
+    <!--  Timer setup  
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list> <ref bean="cronTriggerToRunScheduledJobClass"/> </list>
+        </property>
+    </bean>           -->
+    
+    <!-- =========================== -->
+    <!-- Scheduled Job cron settings -->
+    <!-- =========================== -->
+    <!-- Set up cron settings minute(s) hour(s) day(s) month(s) weekday(s) command(s)
+    <bean id="cronTriggerToRunScheduledJobClass" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="invokeMethodSomethingTodo"/>
+        <property name="cronExpression" value="0 11 * * * ?"/>
+    </bean>    
+    -->
+    <!--  Define the class and method that should be run  
+    <bean id="invokeMethodSomethingTodo" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="ScheduledJob"/>
+        <property name="targetMethod" value="save"/>
+    </bean>    
+    -->
+    <!-- Define class that holds the methods
+    <bean id="ScheduledJob" class="se.netlight.netquiz.quiz.action.QuizAction">        
+        <property name="hostIShouldRunOn" value="${run.recurringjob}"/>
+    </bean> 
+    -->
+</beans>

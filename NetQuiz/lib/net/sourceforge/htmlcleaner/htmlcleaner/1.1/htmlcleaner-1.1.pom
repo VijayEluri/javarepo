@@ -1,0 +1,10 @@
+﻿<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.sourceforge.htmlcleaner</groupId>
+  <artifactId>htmlcleaner</artifactId>
+  <version>1.1</version>
+  <name>HTML cleaner</name>
+  <description>
+  </description>
+  <url>http://net.sourceforge.htmlcleaner</url>
+</project>

@@ -1,0 +1,20 @@
+<!DOCTYPE validators PUBLIC
+"-//OpenSymphony Group//XWork Validator 1.0//EN"
+"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+    <field name="question.question">
+        <field-validator type="requiredstring">
+            <message>Question is required!</message>
+        </field-validator>
+    </field>
+    <field name="question.answer">
+        <field-validator type="requiredstring">
+            <message>Answer is required!</message>
+        </field-validator>
+    </field>
+    <field name="question.priority">
+        <field-validator type="requiredstring">
+            <message>Priority is required!</message>
+        </field-validator>
+    </field>
+</validators>

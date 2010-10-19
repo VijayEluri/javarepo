@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.objectFactory" value="spring" />
+    <constant name="struts.devMode" value="true" />
+    
+    <package name="users" extends="struts-default">
+        
+        <action name="login" method="execute">
+            <result>pages/login.jsp</result>
+        </action>
+        
+        <action name="listUsers" method="execute" class="userAction">
+            <result>/pages/user/list.jsp</result>
+            <result name="input">/pages/user/list.jsp</result>
+        </action>
+        
+        <action name="removeUsers" class="userAction" method="remove">
+            <result>/pages/user/list.jsp</result>
+            <result name="input">/pages/list.jsp</result>
+        </action>
+        
+        <action name="saveUsers" class="userAction" method="save">
+            <result>/pages/user/list.jsp</result>
+            <result name="input">/pages/list.jsp</result>
+        </action>
+        
+    </package>
+    
+    <package name="quiz" extends="struts-default">   
+        <interceptors>   
+            <interceptor-stack name="viewStack">
+                <interceptor-ref name="params"/>
+                <interceptor-ref name="prepare"/>
+            </interceptor-stack>               
+        </interceptors>
+        
+        <action name="list" method="execute" class="quizAction">
+            <result>/pages/quiz/index.jsp</result>
+            <result name="input">/pages/quiz/list.jsp</result>
+        </action>
+        
+        <action name="remove" class="quizAction" method="remove">
+            <result>/pages/quiz/index.jsp</result>
+        </action>
+        
+        <action name="save" class="quizAction" method="save">
+            <result name="input">/pages/quiz/index.jsp</result>
+            <result name="error">/pages/quiz/index.jsp</result>
+            <result type="redirect">quiz/list.action</result>
+        </action>
+        
+        
+        <action name="import" class="importRebelUsers" method="importUsers">
+            <result type="redirect">/pages/menu.jsp</result>
+        </action>
+        
+        <action name="viewQuiz" class="quizAction">
+            <interceptor-ref name="viewStack"/>
+            <result>/pages/quiz/display_quiz.jsp</result>
+        </action>
+        
+        <action name="answerquiz" class="quizEvaluatorAction" >
+            <interceptor-ref name="viewStack"/>
+            <result>/pages/quiz/answer_quiz.jsp</result>
+        </action>
+        <action name="startquiz" class="quizEvaluatorAction" method="startQuiz">
+            <interceptor-ref name="viewStack"/>
+            <result>/pages/quiz/answer_quiz.jsp</result>
+            <result type="redirect" name="error">/pages/invalid_user.jsp</result>
+            <result type="redirect" name="alreadyAnswered">/pages/error_already_answered.jsp</result>
+        </action>
+        <action name="gradeanswers" class="quizEvaluatorAction" method="gradeAnswers">
+            <interceptor-ref name="viewStack"/>
+            <result type="redirect">quiz/resultsquiz.action?score=${score}</result>            
+            <result type="redirect" name="error">/pages/invalid_user.jsp</result>
+            <result type="redirect" name="alreadyAnswered">/pages/error_already_answered.jsp</result>
+        </action>    
+        <action name="resultsquiz" class="quizEvaluatorAction" >
+            <interceptor-ref name="viewStack"/>
+            <result>/pages/quiz/results_quiz.jsp</result>
+        </action>
+        
+        
+    </package>
+    
+    <package name="questions" extends="struts-default">
+        <action name="listQuestions" class="questionAction" method="execute">
+            <result>/pages/quiz/list_questions.jsp</result>
+        </action>
+        
+        <action name="removeQuestion" class="questionAction" method="remove">
+            <result>/pages/quiz/list_questions.jsp</result>
+        </action>
+        
+        <action name="saveQuestion" class="questionAction" method="save">
+            <result>/pages/quiz/list_questions.jsp</result>
+            <result name="input">/pages/quiz/list_questions.jsp</result>
+        </action>
+        
+        <action name="listOldQuestions" class="questionAction" method="findOld">
+            <result>/pages/quiz/list_old_questions.jsp</result>
+        </action>
+        
+    </package>    
+    
+</struts>

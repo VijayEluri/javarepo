@@ -1,0 +1,67 @@
+This application uses Acegi Security System for Spring (http://www.acegisecurity.org/)
+
+
+----------------------------------------------------------------------------------------
+CONFIGURATION
+----------------------------------------------------------------------------------------
+
+All configuraion is done in the file:
+
+		netquiz\src\main\resources\applicationContext-acegi-security.xml
+
+
+----------------------------------------------------------------------------------------		
+What you can do without checking the online documentation:
+----------------------------------------------------------------------------------------
+
+1. To protect or make pages/paths public:
+
+	- Go to configuration file and Search for bean
+		
+		filterInvocationInterceptor
+	
+	- Add pages/paths just like the ones you see there. For example:
+		 /pages/user/**=ROLE_ADMIN
+		 
+	  Notice that the page/path can have 1 or many Roles related
+		
+2. Change the page where I go when I logout.
+
+	- Go to configuration file and Search for bean:
+	
+		logoutFilter
+
+3. Change the page where I go if I tried to login with wrong user/pass:
+
+	- Go to configuration file and Search for bean:
+	
+		authenticationProcessingFilter
+		
+		
+4. Change the page where I go if the user is disabled (Enabled = 0 or N in Users table)
+
+	- Go to configuration file and Search for bean:
+	
+		exceptionTranslationFilter
+		
+
+----------------------------------------------------------------------------------------
+HOW AUTHENTICATION WORKS?
+----------------------------------------------------------------------------------------
+
+The tables and fields involved in authentication are:
+
+	Users
+	- username
+	- password
+	- enabled
+	
+	Authorities
+	- username
+	- authority (Always in the form: ROLE_SOMEROLE)
+	
+NOTE: Tables must be called necessarily like this and they must have at least those fields.
+
+This implementation of the framwork added more fields to the tables in order to handle the 
+object relations with Hibernate.
+If a user exists without a role, he/she won't be able to log in.
