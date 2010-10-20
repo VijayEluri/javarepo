@@ -8,7 +8,7 @@ Requirerements to compile and deploy this project:
 	
 	- The application needs a user that has full access to the Database. It's initially set up to use:
 		username: root
-		password: root
+		password: 
 	  This can be configured in: 
 	  	src\main\resources\applicationContext-netquiz.properties
 	  	
