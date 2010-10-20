@@ -1,4 +1,4 @@
-Requirerements to compile and deploy this project:
+Requirerements to compile and deploy this project
 
 ----------------------------------------------------------------------------------------
 1. Database
