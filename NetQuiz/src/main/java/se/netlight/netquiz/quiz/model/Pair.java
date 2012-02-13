@@ -16,6 +16,7 @@ import javax.persistence.Id;
 
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 
 /**
@@ -23,6 +24,7 @@ import javax.persistence.OneToMany;
  * @author miguelreyes
  */
 @Entity
+@Table(name="pairs")
 public class Pair implements Serializable {
 
     @Id

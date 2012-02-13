@@ -22,7 +22,7 @@ import org.hibernate.annotations.Type;
  * @author mire
  */
 @Entity
-@Table(name="Users")
+@Table(name="users")
 public class User implements Serializable{
 
     @Id

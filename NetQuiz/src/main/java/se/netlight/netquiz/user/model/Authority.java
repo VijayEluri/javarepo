@@ -17,7 +17,7 @@ import javax.persistence.Table;
  * @author mire
  */
 @Entity
-@Table(name="Authorities")
+@Table(name="authorities")
 public class Authority implements Serializable{
 
     @Id
