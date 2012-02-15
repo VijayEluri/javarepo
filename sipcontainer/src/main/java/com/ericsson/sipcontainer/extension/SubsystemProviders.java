@@ -44,14 +44,6 @@ class SubsystemProviders {
             subsystem.get(HEAD_COMMENT_ALLOWED).set(true);
             subsystem.get(TAIL_COMMENT_ALLOWED).set(true);
             subsystem.get(NAMESPACE).set(SubsystemExtension.NAMESPACE);
-
-            //Add information about the 'type' child
-            subsystem.get(CHILDREN, "type", DESCRIPTION).set("Deployment types that should be tracked");
-            subsystem.get(CHILDREN, "type", MIN_OCCURS).set(0);
-            subsystem.get(CHILDREN, "type", MAX_OCCURS).set(Integer.MAX_VALUE);
-            subsystem.get(CHILDREN, "type", MODEL_DESCRIPTION);
-
-
             return subsystem;
         }
     };
@@ -83,22 +75,6 @@ class SubsystemProviders {
             subsystem.get(DESCRIPTION).set("Removes sipcontainer subsystem");
 
             return subsystem;
-        }
-    };
-    /**
-     * Used to create the description of the {@code type} child
-     */
-    public static DescriptionProvider TYPE_CHILD = new DescriptionProvider() {
-
-        @Override
-        public ModelNode getModelDescription(Locale locale) {
-            ModelNode node = new ModelNode();
-            node.get(DESCRIPTION).set("Contains information about a tracked deployment type");
-            node.get(ATTRIBUTES, "tick", DESCRIPTION).set("How often in milliseconds to output the information about the tracked deployments");
-            node.get(ATTRIBUTES, "tick", TYPE).set(LONG);
-            node.get(ATTRIBUTES, "tick", REQUIRED).set(true);
-            node.get(ATTRIBUTES, "tick", DEFAULT).set(10000);
-            return node;
         }
     };
 }
