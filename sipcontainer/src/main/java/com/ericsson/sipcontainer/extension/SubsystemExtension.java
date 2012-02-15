@@ -73,10 +73,10 @@ public class SubsystemExtension implements Extension {
         registration.registerOperationHandler(DESCRIBE, SubsystemDescribeHandler.INSTANCE, SubsystemDescribeHandler.INSTANCE, false, OperationEntry.EntryType.PRIVATE);
 
         //Add the type child
-        ManagementResourceRegistration typeChild = registration.registerSubModel(PathElement.pathElement("type"), SubsystemProviders.TYPE_CHILD);
-        typeChild.registerOperationHandler(ADD, TypeAddHandler.INSTANCE, TypeAddHandler.INSTANCE);
-        typeChild.registerOperationHandler(REMOVE, TypeRemoveHandler.INSTANCE, TypeRemoveHandler.INSTANCE);
-        typeChild.registerReadWriteAttribute("tick", null, SipContainerHandler.INSTANCE, Storage.CONFIGURATION);
+//        ManagementResourceRegistration typeChild = registration.registerSubModel(PathElement.pathElement("type"), SubsystemProviders.TYPE_CHILD);
+//        typeChild.registerOperationHandler(ADD, TypeAddHandler.INSTANCE, TypeAddHandler.INSTANCE);
+//        typeChild.registerOperationHandler(REMOVE, TypeRemoveHandler.INSTANCE, TypeRemoveHandler.INSTANCE);
+//        typeChild.registerReadWriteAttribute("tick", null, SipContainerHandler.INSTANCE, Storage.CONFIGURATION);
 
         subsystem.registerXMLElementWriter(parser);
     }
