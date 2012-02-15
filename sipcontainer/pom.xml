@@ -36,7 +36,7 @@
     <packaging>jar</packaging>
     
     <properties>
-        <version.jboss.as>7.1.0.CR1</version.jboss.as>
+        <version.jboss.as>7.1.0.Final-SNAPSHOT</version.jboss.as>
         <version.junit>4.8.2</version.junit>
         <module.name>com.ericsson.sipcontainer</module.name>
     </properties>
@@ -136,6 +136,12 @@
               <version>${version.jboss.as}</version>
           </dependency>
           <dependency>
+            <groupId>org.jboss.as</groupId>
+            <artifactId>jboss-as-ee</artifactId>
+            <version>${version.jboss.as}</version>
+              <type>jar</type>
+          </dependency>
+          <dependency>
               <groupId>org.jboss.as</groupId>
               <artifactId>jboss-as-subsystem-test</artifactId>
               <version>${version.jboss.as}</version>
@@ -146,7 +152,12 @@
               <artifactId>junit</artifactId>
               <scope>test</scope>
               <version>${version.junit}</version>
-          </dependency>       
+          </dependency>          
+          <dependency>
+            <groupId>org.jboss.web</groupId>
+            <artifactId>jboss-as-web</artifactId>
+            <version>${version.jboss.as}</version>
+        </dependency>
       </dependencies>
     </dependencyManagement>
 
@@ -168,6 +179,22 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
-        </dependency>       
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.as</groupId>
+            <artifactId>jboss-as-ee</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.as</groupId>
+            <artifactId>jboss-as-web</artifactId>
+            <version>${version.jboss.as}</version>
+        </dependency>
     </dependencies>
+    
+    <repositories>
+        <repository>
+        <id>JBOSS_NEXUS</id>
+        <url>http://repository.jboss.org/nexus/content/groups/public</url>
+        </repository>
+  </repositories>
 </project>
