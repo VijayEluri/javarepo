@@ -1,0 +1,10 @@
+Feb 15, 2012 3:03:38 PM org.jboss.msc.service.ServiceLogger_$logger greeting
+INFO: JBoss MSC version 1.0.1.GA
+Feb 15, 2012 3:03:39 PM com.ericsson.sipcontainer.extension.SubsystemAdd populateModel
+INFO: Populating the model
+Feb 15, 2012 3:03:39 PM com.ericsson.sipcontainer.extension.SubsystemAdd populateModel
+INFO: Populating the model
+Feb 15, 2012 3:03:39 PM com.ericsson.sipcontainer.extension.SubsystemAdd populateModel
+INFO: Populating the model
+Feb 15, 2012 3:03:39 PM com.ericsson.sipcontainer.extension.SubsystemAdd populateModel
+INFO: Populating the model
