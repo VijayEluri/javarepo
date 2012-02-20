@@ -19,7 +19,6 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-
 package com.ericsson.sipcontainer.deployment;
 
 import org.apache.catalina.core.StandardContext;
@@ -42,4 +41,10 @@ class SIPContextFactory implements WebContextFactory {
         return new SIPWebContext(name);
     }
 
+    @Override
+    public void postProcessContext(StandardContext webContext) {
+        //TODO implement post process actions:
+        //applicationWebConfig();
+        //completeConfig();
+    }
 }
