@@ -21,30 +21,31 @@
  */
 package com.ericsson.sipcontainer.deployment;
 
-import org.apache.catalina.core.StandardContext;
-import org.jboss.as.server.deployment.DeploymentUnit;
-import org.jboss.as.server.deployment.DeploymentUnitProcessingException;
-import org.jboss.as.web.spi.WebContextFactory;
+import org.apache.catalina.startup.ContextConfig;
 
 /**
- * The Sip context factory.
- *
  * @author Emanuel Muckenhuber
  */
-class SIPContextFactory implements WebContextFactory {
+public class SipContextConfig extends ContextConfig {
 
-    @Override
-    public StandardContext createContext(final DeploymentUnit deploymentUnit) throws DeploymentUnitProcessingException {
+    private final SipMetaData sipMetaData;
 
-        final String name = deploymentUnit.getName();
-        // Create the SIP specific context
-        return new SIPWebContext(name);
+    public SipContextConfig(SipMetaData sipMetaData) {
+        this.sipMetaData = sipMetaData;
     }
 
     @Override
-    public void postProcessContext(final DeploymentUnit deploymentUnit, final StandardContext context) {
-        final SipMetaData sipMetaData = deploymentUnit.getAttachment(SipMetaData.ATTACHMENT_KEY);
-        final SipContextConfig contextConfig = new SipContextConfig(sipMetaData);
-        context.addLifecycleListener(contextConfig);
+    protected void applicationWebConfig() {
+        //
+    }
+
+    @Override
+    protected void applicationTldConfig() {
+        //
+    }
+
+    @Override
+    protected void stop() {
+        //
     }
 }
