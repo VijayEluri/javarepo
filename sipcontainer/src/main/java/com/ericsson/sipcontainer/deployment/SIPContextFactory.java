@@ -44,7 +44,13 @@ class SIPContextFactory implements WebContextFactory {
     @Override
     public void postProcessContext(final DeploymentUnit deploymentUnit, final StandardContext context) {
         final SipMetaData sipMetaData = deploymentUnit.getAttachment(SipMetaData.ATTACHMENT_KEY);
-        final SipContextConfig contextConfig = new SipContextConfig(sipMetaData);
+        final SipContextConfig contextConfig = new SipContextConfig(deploymentUnit, sipMetaData);
         context.addLifecycleListener(contextConfig);
+    }
+
+    @Override
+    public SipContextConfig createContextConfig(DeploymentUnit deploymentUnit, StandardContext webContext) throws DeploymentUnitProcessingException {
+        final SipMetaData sipMetaData = deploymentUnit.getAttachment(SipMetaData.ATTACHMENT_KEY);
+        return new SipContextConfig(deploymentUnit, sipMetaData);
     }
 }

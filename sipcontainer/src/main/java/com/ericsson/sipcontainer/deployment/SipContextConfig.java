@@ -21,16 +21,19 @@
  */
 package com.ericsson.sipcontainer.deployment;
 
-import org.apache.catalina.startup.ContextConfig;
+import org.jboss.as.server.deployment.DeploymentUnit;
+import org.jboss.as.web.deployment.JBossContextConfig;
 
 /**
  * @author Emanuel Muckenhuber
  */
-public class SipContextConfig extends ContextConfig {
+public class SipContextConfig extends JBossContextConfig {
 
+    private DeploymentUnit deploymentUnitContext = null;
     private final SipMetaData sipMetaData;
 
-    public SipContextConfig(SipMetaData sipMetaData) {
+    public SipContextConfig(DeploymentUnit deploymentUnitContext, SipMetaData sipMetaData) {
+        super(deploymentUnitContext);
         this.sipMetaData = sipMetaData;
     }
 
