@@ -20,18 +20,25 @@ public class PassengerFlightDetails implements Serializable{
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
     
-    @OneToMany
+    @ManyToOne
     private Passenger passenger;
     
-    @OneToMany
+    @OneToOne(cascade=CascadeType.ALL)
     private Seat seat;
+    
+    @ManyToOne
+    private Flight flight;
 
     public PassengerFlightDetails() {
     }
     
     public PassengerFlightDetails(Seat seat) {
         this.seat = seat;
-        this.passenger = passenger;
+    }
+    
+    public PassengerFlightDetails(Flight flight, Seat seat) {
+        this.seat = seat;
+        this.flight = flight;
     }
 
     /**
@@ -68,6 +75,20 @@ public class PassengerFlightDetails implements Serializable{
      */
     public void setPassenger(Passenger passenger) {
         this.passenger = passenger;
+    }
+
+    /**
+     * @return the flight
+     */
+    public Flight getFlight() {
+        return flight;
+    }
+
+    /**
+     * @param flight the flight to set
+     */
+    public void setFlight(Flight flight) {
+        this.flight = flight;
     }
 
 }

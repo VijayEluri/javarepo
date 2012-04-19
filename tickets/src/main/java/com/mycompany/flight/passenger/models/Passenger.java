@@ -31,23 +31,29 @@ public class Passenger implements Serializable {
     private Set<PassengerFlightDetails> passengerFlightDetails = new HashSet<PassengerFlightDetails>();
 
     public PassengerFlightDetails getDetailsForFlight(Flight flight) {
-        PassengerFlightDetails passengerFlightDetails = null;
-        Flight myflight;
-        if (ticket != null) {
-            myflight = ticket.getOutboundFlight();
-            if (myflight.getNumber() == flight.getNumber()) {
-                //TODO implement
-                //passengerFlightDetails = outboundFlight.getTicket().getPassenger().getPassengerFlightDetails();
+        System.out.println("### PassengerFlightDetails getDetailsForFlight");
+        PassengerFlightDetails flightDetails = null;
+        if (ticket != null) {           
+            for (PassengerFlightDetails pfd : passengerFlightDetails) {
+                if(flight.getNumber() == pfd.getFlight().getNumber()){
+                    System.out.println("Outbound Flight number: " + pfd.getFlight().getNumber());
+                    System.out.println("Outbound Flight Seat number: " + pfd.getSeat().getNumber());
+                    return pfd;
+                }
             }
-            myflight = ticket.getReturnFlight();
-            if (myflight.getNumber() == flight.getNumber()) {
-                //TODO implement
+            
+            for (PassengerFlightDetails pfd : passengerFlightDetails) {
+                if(flight.getNumber() == pfd.getFlight().getNumber()){
+                    System.out.println("Return Flight number: " + pfd.getFlight().getNumber());
+                    System.out.println("Outbound Flight Seat number: " + pfd.getSeat().getNumber());
+                    return pfd;
+                }
             }
         } else {
             System.out.println("No ticket available");
             return null;
         }
-        return passengerFlightDetails; //TODO
+        return flightDetails;
     }
     
     public void addPassengerFlightDetails(PassengerFlightDetails passengerFlightDetails) {
@@ -65,9 +71,9 @@ public class Passenger implements Serializable {
                 throw new Exception("No ticket has been set!");
             }
             this.passengerFlightDetails.add(passengerFlightDetails);
-            
+            passengerFlightDetails.setFlight(flight);
             if (flight instanceof OutboundFlight) {
-                ticket.setOutboundFlight((OutboundFlight) flight);
+                ticket.setOutboundFlight((OutboundFlight) flight);               
             } else if (flight instanceof ReturnFlight) {
                 ticket.setReturnFlight((ReturnFlight) flight);
             }

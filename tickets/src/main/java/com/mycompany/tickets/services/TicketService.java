@@ -16,4 +16,6 @@ public interface TicketService {
 
     public Ticket findById(long id);
     
+    public void delete(Ticket ticket);
+    
 }

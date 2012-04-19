@@ -28,7 +28,8 @@ public class TicketServiceEJBImpl implements TicketService {
 
     @Override
     public Ticket findById(long id) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Ticket ticket = entityManager.find(Ticket.class, new Long(id));
+        return ticket;
     }
 
     /**
@@ -36,5 +37,10 @@ public class TicketServiceEJBImpl implements TicketService {
      */
     public void setEntityManager(EntityManager entityManager) {
         this.entityManager = entityManager;
+    }
+
+    @Override
+    public void delete(Ticket ticket) {
+        this.entityManager.remove(ticket);
     }
 }

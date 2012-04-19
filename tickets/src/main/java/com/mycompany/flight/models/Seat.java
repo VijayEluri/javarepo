@@ -4,14 +4,27 @@
  */
 package com.mycompany.flight.models;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author mreyesab
  */
-public class Seat {
+@Entity
+public class Seat implements Serializable{
     
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int id;
     
-    private String number;   
+    private String number;
+
+    public Seat() {
+    }
     
     public Seat(String seatNumber) {
         this.number = seatNumber;
@@ -29,5 +42,19 @@ public class Seat {
      */
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -69,14 +69,21 @@ public class TicketPersistenceTest {
             Logger.getLogger(TicketPersistenceTest.class.getName()).log(Level.SEVERE, null, ex);
         }
        
-        ticketDAO.save(ticket);
+        ticket = ticketDAO.save(ticket);
 
-        ticket = ticketDAO.findById(ticket.getId());
+        //Ticket tempticket = ticketDAO.findById(ticket.getId());
         
         Assert.assertEquals("Miguel", ticket.getPassenger().getFirstName());
         Assert.assertEquals("2A", ticket.getPassenger().getDetailsForFlight(ticket.getOutboundFlight()).getSeat().getNumber());
+        Assert.assertEquals("2B", ticket.getPassenger().getDetailsForFlight(ticket.getReturnFlight()).getSeat().getNumber());
     }
 
+    /**
+     * 
+     * @param flight TODO not used at the moment
+     * @param seatNumber String seat number
+     * @return Seat object
+     */
     private Seat getSeatForFlight(Flight flight, String seatNumber) {
         return new Seat(seatNumber);
     }
