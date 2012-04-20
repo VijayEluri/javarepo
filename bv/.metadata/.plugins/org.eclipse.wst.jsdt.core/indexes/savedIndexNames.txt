@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+/home/mreyesab/workspace/bolagsverket/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1058480744.index
+2414445417.index
+1178804809.index
+1811067994.index
+571308770.index

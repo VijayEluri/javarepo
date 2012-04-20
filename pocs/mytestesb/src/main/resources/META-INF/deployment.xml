@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><jbossesb-deployment>
+  <depends>jboss.esb.quickstart.destination:service=Queue,name=quickstart_helloworld_ejb3_ws_esb</depends>
+   
+</jbossesb-deployment>

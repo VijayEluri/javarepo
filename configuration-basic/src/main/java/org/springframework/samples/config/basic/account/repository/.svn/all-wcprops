@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/spring-samples/!svn/ver/258/configuration-basic/trunk/src/main/java/org/springframework/samples/config/basic/account/repository
+END
+AccountRepository.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/spring-samples/!svn/ver/258/configuration-basic/trunk/src/main/java/org/springframework/samples/config/basic/account/repository/AccountRepository.java
+END
+InMemoryAccountRepository.java
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/spring-samples/!svn/ver/258/configuration-basic/trunk/src/main/java/org/springframework/samples/config/basic/account/repository/InMemoryAccountRepository.java
+END

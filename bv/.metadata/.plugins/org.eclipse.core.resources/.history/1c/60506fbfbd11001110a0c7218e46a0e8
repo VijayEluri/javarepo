@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>hello-world-jboss51</artifactId>
+		<groupId>se.bolagsverket.helloworld</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>hello-world-jboss51-ear</artifactId>
+	<packaging>ear</packaging>
+	<name>hello-world-jboss51-ear</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<version>5</version>
+					<archive>
+						<manifest>
+							<addClasspath>false</addClasspath>
+						</manifest>
+					</archive>
+					<modules>
+						<ejbModule>
+							<groupId>se.bolagsverket.helloworld</groupId>
+							<artifactId>hello-world-jboss43-ejbcli</artifactId>
+						</ejbModule>
+						<webModule>
+							<groupId>se.bolagsverket.helloworld</groupId>
+							<artifactId>hello-world-jboss51-web</artifactId>
+						</webModule>
+					</modules>
+					<jboss>
+						<version>5</version>
+						<module-order>strict</module-order>
+					</jboss>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>se.bolagsverket.helloworld</groupId>
+			<artifactId>hello-world-jboss43-ejbcli</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>ejb</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>se.bolagsverket.helloworld</groupId>
+			<artifactId>hello-world-jboss51-web</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>war</type>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;se.bolagsverket.helloworld.HelloWorldBean&apos; to &apos;HelloWorldStatelessBean43&apos;&#x0A;- Original project: &apos;hello-world-jboss51-ejb&apos;&#x0A;- Original element: &apos;se.bolagsverket.helloworld.HelloWorldBean&apos;&#x0A;- Renamed element: &apos;se.bolagsverket.helloworld.HelloWorldStatelessBean43&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;HelloWorldBean&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;se.bolagsverket.helloworld{HelloWorldBean.java[HelloWorldBean" matchStrategy="1" name="HelloWorldStatelessBean43" qualified="false" references="true" similarDeclarations="false" stamp="1321637391072" textual="false" version="1.0"/>
+</session>

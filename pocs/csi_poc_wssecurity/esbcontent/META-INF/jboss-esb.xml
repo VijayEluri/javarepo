@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<jbossesb parameterReloadSecs="5"
+ xmlns="http://anonsvn.labs.jboss.com/labs/jbossesb/trunk/product/etc/schemas/xml/jbossesb-1.3.0.xsd"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://anonsvn.labs.jboss.com/labs/jbossesb/trunk/product/etc/schemas/xml/jbossesb-1.3.0.xsd http://anonsvn.jboss.org/repos/labs/labs/jbossesb/trunk/product/etc/schemas/xml/jbossesb-1.3.0.xsd">
+ <providers>
+  <http-provider name="providerHTTP">
+   <http-bus busid="providerHTTPCSIProxyWS"/>
+  </http-provider>
+ </providers>
+ <services>
+  <service category="CSIServices" description="CSIProxyWS"
+   invmScope="GLOBAL" name="CSIProxyWS">
+   <listeners>
+    <http-gateway busidref="providerHTTPCSIProxyWS" name="CSIProxyWS_GwListener"/>
+   </listeners>
+   <actions mep="RequestResponse" webservice="true">
+    <action class="org.jboss.soa.esb.actions.SystemPrintln" name="EchoSoapMessage1">
+     <property name="message" value="After Start ESB - CSIProxyWS -"/>
+    </action>
+    <action class="org.jboss.soa.esb.smooks.SmooksAction" name="Smooks1">
+     <property name="smooksConfig" value="smooks-getCustomerId.xml"/>
+     <property name="resultType" value="JAVA"/>
+    </action>
+    <action class="it.csi.poc.soa.PrepareGetCustomerByIdSOAPClient" name="Prepare1"/>
+    <action class="org.jboss.soa.esb.actions.soap.SOAPClient" name="SoapClient1">
+     <property name="wsdl" value="https://dev-isp1.csi.it/wss4/CustomerService?WSDL">
+     	 <http-client-property name="file" value="/csi-https.properties" ></http-client-property>
+     </property>	
+     <property name="SOAPAction" value="getCustomerById"/>
+     <property name="responseAsOgnlMap" value="false"/>
+    </action>
+    <action class="it.csi.poc.soa.ReturnPipeline" name="ReturnSoapClient1"/>
+    <action class="org.jboss.soa.esb.actions.soap.proxy.SOAPProxy" name="SoapProxy1">
+     <property name="wsdl" value="http://localhost:8080/csi_poc_customWS/CustomerServiceBean?wsdl"/>
+    </action>
+    <action class="it.csi.poc.soa.ResponsePipeline" name="ReturnPipeline1"/>
+   </actions>
+  </service>
+ </services>
+</jbossesb>

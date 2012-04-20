@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://customerservice.csi.it/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://customerservice.csi.it/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+			<xs:element name="updateCustomer" type="tns:updateCustomer"/>
+			<xs:complexType name="updateCustomer">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="customer" type="tns:customer"/>
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:element name="getCustomersByName" type="tns:getCustomersByName"/>
+			<xs:element name="getCustomersByNameResponse" type="tns:getCustomersByNameResponse"/>
+			<xs:complexType name="getCustomersByName">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="name" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getCustomersByNameResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customer"/>
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:element name="getCustomerById" type="tns:getCustomerById"/>
+			<xs:element name="getCustomerByIdResponse" type="tns:getCustomerByIdResponse"/>
+			<xs:complexType name="getCustomerById">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="customerId" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getCustomerByIdResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="return" type="tns:customer"/>
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:element name="NoSuchCustomer" type="tns:NoSuchCustomer"/>
+			<xs:complexType name="NoSuchCustomer">
+				<xs:sequence>
+					<xs:element name="customerName" nillable="true" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="customer">
+				<xs:sequence>
+					<xs:element name="customerId" type="xs:int"/>
+					<xs:element minOccurs="0" name="name" type="xs:string"/>
+					<xs:element minOccurs="0" name="address" type="tns:address"/>
+					<xs:element minOccurs="0" name="numOrders" type="xs:int"/>
+					<xs:element name="revenue" type="xs:double"/>
+					<xs:element minOccurs="0" name="test" type="xs:decimal"/>
+					<xs:element minOccurs="0" name="birthDate" type="xs:date"/>
+					<xs:element minOccurs="0" name="type" type="tns:customerType"/>
+					<xs:element name="privacy" type="xs:boolean"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="notes" nillable="true" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="address">
+				<xs:sequence>
+					<xs:element name="addressId" type="xs:int"/>
+					<xs:element name="completeAddress" type="xs:string"/>
+					<xs:element name="city" type="xs:string"/>
+					<xs:element name="country" type="xs:string"/>
+					<xs:element name="nation" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="customerType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="PRIVATE"/>
+					<xs:enumeration value="BUSINESS"/>
+				</xs:restriction>
+			</xs:simpleType>
+
+		</xs:schema>
+ 

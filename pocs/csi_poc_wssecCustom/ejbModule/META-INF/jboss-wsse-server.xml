@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jboss-ws-security xmlns="http://www.jboss.com/ws-security/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.jboss.com/ws-security/config http://www.jboss.com/ws-security/schema/jboss-ws-security_1_0.xsd">
+    <key-store-file>META-INF/serviceKeyStore.jks</key-store-file>
+    <key-store-password>changeit</key-store-password>
+    <trust-store-file>META-INF/serviceKeyStore.jks</trust-store-file>
+    <trust-store-password>changeit</trust-store-password>
+    <config>
+    
+        <encrypt type="x509v3" alias="myclientpub"/>
+        <sign type="x509v3" alias="myservicekey"/>
+        <requires>	
+        	<timestamp/>
+        	<signature>
+        		<targets>
+        			<target type="qname">{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd}Timestamp</target>
+        			<target type="qname">{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd}Created</target>
+        			<target type="qname">{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd}Expires</target>
+        			<target type="qname">{http://schemas.xmlsoap.org/soap/envelope/}Body</target>
+        			<target type="qname">{http://schemas.xmlsoap.org/soap/envelope/}Body;{Element}{http://service.action.war.presentation.wss5.cxf.csi.it/}sayHi</target>
+        		</targets>
+        	</signature>
+            <encryption>
+            	<targets>
+            		<target type="qname">{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd}Timestamp</target>
+            		<target type="qname">{http://service.action.war.presentation.wss5.cxf.csi.it/}sayHi</target>
+            	</targets>
+            </encryption>
+        </requires>
+    </config>    
+</jboss-ws-security>

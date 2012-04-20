@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application PUBLIC
+	"-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN"
+	"http://java.sun.com/dtd/application_1_3.dtd">
+<application>
+  <display-name>hello-world-jboss43-ear</display-name>
+  <module>
+    <ejb>hello-world-jboss43-ejb-1.0-SNAPSHOT.jar</ejb>
+  </module>
+  <module>
+    <web>
+      <web-uri>hello-world-jboss43-web-1.0-SNAPSHOT.war</web-uri>
+      <context-root>/hello-world-jboss43-web</context-root>
+    </web>
+  </module>
+</application>

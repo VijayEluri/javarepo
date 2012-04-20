@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/spring-samples/!svn/ver/258/configuration-basic/trunk/src/main/java/org/springframework/samples/config/basic/account/service
+END
+TransferService.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/spring-samples/!svn/ver/258/configuration-basic/trunk/src/main/java/org/springframework/samples/config/basic/account/service/TransferService.java
+END
+TransferServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/spring-samples/!svn/ver/258/configuration-basic/trunk/src/main/java/org/springframework/samples/config/basic/account/service/TransferServiceImpl.java
+END

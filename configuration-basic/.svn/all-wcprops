@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/spring-samples/!svn/ver/259/configuration-basic/trunk
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/spring-samples/!svn/ver/258/configuration-basic/trunk/pom.xml
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/spring-samples/!svn/ver/259/configuration-basic/trunk/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/spring-samples/!svn/ver/259/configuration-basic/trunk/.project
+END

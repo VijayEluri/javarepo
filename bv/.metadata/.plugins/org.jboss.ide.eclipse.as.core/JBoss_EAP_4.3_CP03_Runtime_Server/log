@@ -1,0 +1,64 @@
+!SESSION 2011-11-17 17:17:33.250 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_29
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product com.jboss.jbds.product.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product com.jboss.jbds.product.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 33685506 2011-11-18 08:31:39.529
+!MESSAGE Full publish failed for module /hello-world-jboss51-web
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2011-11-18 08:31:39.529
+!MESSAGE Error reading file /home/mreyesab/workspace/bolagsverket/bv-rmi-51/hello-world-jboss51-web/target/endorsed/javaee-endorsed-api-6.0.jar
+!STACK 0
+java.io.FileNotFoundException: /home/mreyesab/workspace/bolagsverket/bv-rmi-51/hello-world-jboss51-web/target/endorsed/javaee-endorsed-api-6.0.jar (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil$LocalCopyCallback.copyFile(PublishCopyUtil.java:143)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.copy(PublishCopyUtil.java:611)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.publishFull(PublishCopyUtil.java:582)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.copy(PublishCopyUtil.java:601)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.publishFull(PublishCopyUtil.java:582)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.copy(PublishCopyUtil.java:601)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.publishFull(PublishCopyUtil.java:582)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.initFullPublish(PublishCopyUtil.java:569)
+	at org.jboss.ide.eclipse.as.core.publishers.AbstractServerToolsPublisher.fullPublish(AbstractServerToolsPublisher.java:184)
+	at org.jboss.ide.eclipse.as.core.publishers.AbstractServerToolsPublisher.publishModule(AbstractServerToolsPublisher.java:105)
+	at org.jboss.ide.eclipse.as.core.publishers.AbstractPublishMethod.publishModule(AbstractPublishMethod.java:77)
+	at org.jboss.ide.eclipse.as.core.server.internal.DeployableServerBehavior.publishModule(DeployableServerBehavior.java:67)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModule(ServerBehaviourDelegate.java:1051)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModules(ServerBehaviourDelegate.java:1143)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:956)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:775)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3046)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:341)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2011-11-18 08:31:39.529
+!MESSAGE Error reading file /home/mreyesab/workspace/bolagsverket/bv-rmi-51/hello-world-jboss51-web/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+!STACK 0
+java.io.FileNotFoundException: /home/mreyesab/workspace/bolagsverket/bv-rmi-51/hello-world-jboss51-web/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil$LocalCopyCallback.copyFile(PublishCopyUtil.java:143)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.copy(PublishCopyUtil.java:611)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.publishFull(PublishCopyUtil.java:582)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.copy(PublishCopyUtil.java:601)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.publishFull(PublishCopyUtil.java:582)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.copy(PublishCopyUtil.java:601)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.publishFull(PublishCopyUtil.java:582)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.copy(PublishCopyUtil.java:601)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.publishFull(PublishCopyUtil.java:582)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.copy(PublishCopyUtil.java:601)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.publishFull(PublishCopyUtil.java:582)
+	at org.jboss.ide.eclipse.as.core.server.xpl.PublishCopyUtil.initFullPublish(PublishCopyUtil.java:569)
+	at org.jboss.ide.eclipse.as.core.publishers.AbstractServerToolsPublisher.fullPublish(AbstractServerToolsPublisher.java:184)
+	at org.jboss.ide.eclipse.as.core.publishers.AbstractServerToolsPublisher.publishModule(AbstractServerToolsPublisher.java:105)
+	at org.jboss.ide.eclipse.as.core.publishers.AbstractPublishMethod.publishModule(AbstractPublishMethod.java:77)
+	at org.jboss.ide.eclipse.as.core.server.internal.DeployableServerBehavior.publishModule(DeployableServerBehavior.java:67)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModule(ServerBehaviourDelegate.java:1051)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModules(ServerBehaviourDelegate.java:1143)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:956)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:775)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3046)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:341)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
