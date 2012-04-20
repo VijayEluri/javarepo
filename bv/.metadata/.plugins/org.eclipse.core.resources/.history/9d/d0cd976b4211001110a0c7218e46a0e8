@@ -1,7 +1,0 @@
-package com.miguel;
-import javax.ejb.Remote;
-
-@Remote
-public interface MySessionBeanRemote {
-
-}

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<servers>
-  <server auto-publish-time="1" hostname="172.20.199.148" id="JBoss EAP 5.x Runtime Server1321547841639" name="JBoss EAP 5.x Runtime Server" org.jboss.ide.eclipse.as.core.server.deployDirectoryType="metadata" org.jboss.ide.eclipse.as.core.server.password="admin" org.jboss.ide.eclipse.as.core.server.serverMode="local" org.jboss.ide.eclipse.as.core.server.userName="admin" runtime-id="JBoss EAP 5.x Runtime" server-type="org.jboss.ide.eclipse.as.eap.50" server-type-id="org.jboss.ide.eclipse.as.eap.50" start-timeout="450" stop-timeout="450" timestamp="3"/>
-  <server auto-publish-time="1" hostname="localhost" id="JBoss EAP 4.3_CP03 Runtime Server" name="JBoss EAP 4.3_CP03 Runtime Server" org.jboss.ide.eclipse.as.core.server.deployDirectoryType="metadata" org.jboss.ide.eclipse.as.core.server.password="admin" org.jboss.ide.eclipse.as.core.server.serverMode="local" org.jboss.ide.eclipse.as.core.server.userName="admin" runtime-id="JBoss EAP 4.3_CP03 Runtime Server" server-type="org.jboss.ide.eclipse.as.eap.43" server-type-id="org.jboss.ide.eclipse.as.eap.43" start-timeout="450" stop-timeout="450" timestamp="1">
-    <list key="modules" value0="/hello-world-jboss51-web::org.jboss.ide.eclipse.as.core.singledeployablefactory:/hello-world-jboss51-web::jboss.singlefile::1.0"/>
-  </server>
-</servers>

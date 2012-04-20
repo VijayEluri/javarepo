@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;hello-world-jboss43-ejb&apos;" deleteContents="false" description="Delete resource &apos;hello-world-jboss43-ejb&apos;" element1="/hello-world-jboss43-ejb" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1321636682160"/>&#x0A;<refactoring comment="Delete 6 resources" deleteContents="false" description="Delete 6 resources" element1="/bv-rmi-43" element2="/bv-rmi-51" element3="/hello-world-jboss43-ear" element4="/hello-world-jboss43-web" element5="/hello-world-jboss51-ear" element6="/hello-world-jboss51-web" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="6" stamp="1321636987073"/>
-</session>

@@ -1,7 +1,0 @@
-package com.miguel;
-import javax.ejb.Local;
-
-@Local
-public interface MySessionBeanLocal {
-
-}

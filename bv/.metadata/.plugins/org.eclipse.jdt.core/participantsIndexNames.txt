@@ -1,5 +1,0 @@
-INDEX VERSION 1.126
-/home/mreyesab/workspace/bolagsverket/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/182493730.index
-/hello-world-jboss51-web
-/home/mreyesab/workspace/bolagsverket/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4178364319.index
-/hello-world-jboss43-web

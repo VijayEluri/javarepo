@@ -1,6 +1,0 @@
-INDEX VERSION 1.126+/home/mreyesab/workspace/bolagsverket/.metadata/.plugins/org.eclipse.jdt.core
-3732490648.index
-736806183.index
-1877330269.index
-1959609326.index
-1178804809.index
