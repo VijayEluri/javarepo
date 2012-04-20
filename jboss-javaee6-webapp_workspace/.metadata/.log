@@ -1,0 +1,135 @@
+!SESSION 2012-04-20 12:16:18.965 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product com.jboss.jbds.product.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product com.jboss.jbds.product.product
+
+!ENTRY org.eclipse.core.resources 4 2 2012-04-20 12:17:46.929
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextEntry(HashMap.java:810)
+	at java.util.HashMap$EntryIterator.next(HashMap.java:851)
+	at java.util.HashMap$EntryIterator.next(HashMap.java:849)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.domain.JaxrsMetamodel.unindexElement(JaxrsMetamodel.java:239)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.domain.JaxrsMetamodel.indexElement(JaxrsMetamodel.java:177)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.domain.JaxrsMetamodel.add(JaxrsMetamodel.java:158)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.ResourceChangedProcessor.postProcessHttpMethod(ResourceChangedProcessor.java:479)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.ResourceChangedProcessor.processHttpMethodChangesOnScopeAdditionOrChange(ResourceChangedProcessor.java:387)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.ResourceChangedProcessor.processEvent(ResourceChangedProcessor.java:176)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.ResourceChangedProcessor.processEntireProject(ResourceChangedProcessor.java:108)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.ResourceChangedProcessor.processAffectedResources(ResourceChangedProcessor.java:83)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.JaxrsMetamodelBuilder.build(JaxrsMetamodelBuilder.java:123)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.JaxrsMetamodelBuilder.build(JaxrsMetamodelBuilder.java:83)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 75 2012-04-20 12:17:47.404
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.jboss.tools.ws.jaxrs.core 4 75 2012-04-20 12:17:47.404
+!MESSAGE Errors running builder 'JAX-RS Builder' on project 'jboss-javaee6-webapp'.
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextEntry(HashMap.java:810)
+	at java.util.HashMap$EntryIterator.next(HashMap.java:851)
+	at java.util.HashMap$EntryIterator.next(HashMap.java:849)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.domain.JaxrsMetamodel.unindexElement(JaxrsMetamodel.java:239)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.domain.JaxrsMetamodel.indexElement(JaxrsMetamodel.java:177)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.domain.JaxrsMetamodel.add(JaxrsMetamodel.java:158)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.ResourceChangedProcessor.postProcessHttpMethod(ResourceChangedProcessor.java:479)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.ResourceChangedProcessor.processHttpMethodChangesOnScopeAdditionOrChange(ResourceChangedProcessor.java:387)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.ResourceChangedProcessor.processEvent(ResourceChangedProcessor.java:176)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.ResourceChangedProcessor.processEntireProject(ResourceChangedProcessor.java:108)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.ResourceChangedProcessor.processAffectedResources(ResourceChangedProcessor.java:83)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.JaxrsMetamodelBuilder.build(JaxrsMetamodelBuilder.java:123)
+	at org.jboss.tools.ws.jaxrs.core.internal.metamodel.builder.JaxrsMetamodelBuilder.build(JaxrsMetamodelBuilder.java:83)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.jobs 4 2 2012-04-20 12:20:08.615
+!MESSAGE An internal error occurred during: "Launching jboss-javaee6-webapp".
+!STACK 0
+java.lang.IllegalStateException: Direct launch not supported
+	at org.hibernate.eclipse.launch.ConsoleConfigurationLaunchDelegate.launch(ConsoleConfigurationLaunchDelegate.java:13)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:854)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:703)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:937)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1141)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2012-04-20 12:20:20.175
+!MESSAGE Publish Failed for module jboss-javaee6-webapp
+!SUBENTRY 1 org.jboss.ide.eclipse.archives.webtools 4 0 2012-04-20 12:20:20.175
+!MESSAGE Copy of /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF to /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp_workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_7.1_Runtime_Server1334917051816/tempRemoteDeploy/jboss-javaee6-webapp.war/META-INF/MANIFEST.MF has failed
+!SUBENTRY 1 org.jboss.ide.eclipse.archives.webtools 4 0 2012-04-20 12:20:20.175
+!MESSAGE Copy of /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp/target/m2e-wtp/web-resources/META-INF/maven/com.miguel.javaee/jboss-javaee6-webapp/pom.properties to /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp_workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_7.1_Runtime_Server1334917051816/tempRemoteDeploy/jboss-javaee6-webapp.war/META-INF/maven/com.miguel.javaee/jboss-javaee6-webapp/pom.properties has failed
+!SUBENTRY 1 org.jboss.ide.eclipse.archives.webtools 4 0 2012-04-20 12:20:20.175
+!MESSAGE Copy of /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp/target/m2e-wtp/web-resources/META-INF/maven/com.miguel.javaee/jboss-javaee6-webapp/pom.xml to /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp_workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_7.1_Runtime_Server1334917051816/tempRemoteDeploy/jboss-javaee6-webapp.war/META-INF/maven/com.miguel.javaee/jboss-javaee6-webapp/pom.xml has failed
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2012-04-20 12:48:56.655
+!MESSAGE Publish Failed for module jboss-javaee6-webapp
+!SUBENTRY 1 org.jboss.ide.eclipse.archives.webtools 4 0 2012-04-20 12:48:56.655
+!MESSAGE Copy of /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF to /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp_workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_7.1_Runtime_Server1334917051816/tempRemoteDeploy/jboss-javaee6-webapp.war/META-INF/MANIFEST.MF has failed
+!SUBENTRY 1 org.jboss.ide.eclipse.archives.webtools 4 0 2012-04-20 12:48:56.655
+!MESSAGE Copy of /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp/target/m2e-wtp/web-resources/META-INF/maven/com.miguel.javaee/jboss-javaee6-webapp/pom.properties to /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp_workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_7.1_Runtime_Server1334917051816/tempRemoteDeploy/jboss-javaee6-webapp.war/META-INF/maven/com.miguel.javaee/jboss-javaee6-webapp/pom.properties has failed
+!SUBENTRY 1 org.jboss.ide.eclipse.archives.webtools 4 0 2012-04-20 12:48:56.655
+!MESSAGE Copy of /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp/target/m2e-wtp/web-resources/META-INF/maven/com.miguel.javaee/jboss-javaee6-webapp/pom.xml to /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp_workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_7.1_Runtime_Server1334917051816/tempRemoteDeploy/jboss-javaee6-webapp.war/META-INF/maven/com.miguel.javaee/jboss-javaee6-webapp/pom.xml has failed
+
+!ENTRY org.jboss.ide.eclipse.as.ui 1 0 2012-04-20 12:49:02.968
+!MESSAGE Module jboss-javaee6-webapp on JBoss 7.1 Runtime Server not ready to be shown in web browser. Waiting...
+
+!ENTRY org.eclipse.wst.server.core 4 0 2012-04-20 12:49:41.233
+!MESSAGE Server JBoss 7.1 Runtime Server failed to stop.
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 16973827 2012-04-20 12:49:57.724
+!MESSAGE Killing the server process has failed. The process may still be running.
+!STACK 1
+org.eclipse.debug.core.DebugException: Terminate failed
+	at org.eclipse.debug.core.model.RuntimeProcess.terminate(RuntimeProcess.java:224)
+	at org.jboss.ide.eclipse.as.core.server.internal.LocalJBossBehaviorDelegate.forceStop(LocalJBossBehaviorDelegate.java:126)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.LocalJBoss7BehaviorDelegate.stopImpl(LocalJBoss7BehaviorDelegate.java:40)
+	at org.jboss.ide.eclipse.as.core.server.internal.AbstractJBossBehaviourDelegate.stop(AbstractJBossBehaviourDelegate.java:39)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.DelegatingJBoss7ServerBehavior.stop(DelegatingJBoss7ServerBehavior.java:118)
+	at org.eclipse.wst.server.core.internal.Server.stopImpl2(Server.java:3578)
+	at org.eclipse.wst.server.core.internal.Server.stopImpl(Server.java:3541)
+	at org.eclipse.wst.server.core.internal.Server$StopJob.run(Server.java:396)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.debug.core 4 5010 2012-04-20 12:49:57.724
+!MESSAGE Terminate failed
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2012-04-20 12:53:46.110
+!MESSAGE Publish Failed for module jboss-javaee6-webapp
+!SUBENTRY 1 org.jboss.ide.eclipse.archives.webtools 4 0 2012-04-20 12:53:46.110
+!MESSAGE Copy of /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF to /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp_workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_7.1_Runtime_Server1334917051816/tempRemoteDeploy/jboss-javaee6-webapp.war/META-INF/MANIFEST.MF has failed
+!SUBENTRY 1 org.jboss.ide.eclipse.archives.webtools 4 0 2012-04-20 12:53:46.110
+!MESSAGE Copy of /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp/target/m2e-wtp/web-resources/META-INF/maven/com.miguel.javaee/jboss-javaee6-webapp/pom.properties to /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp_workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_7.1_Runtime_Server1334917051816/tempRemoteDeploy/jboss-javaee6-webapp.war/META-INF/maven/com.miguel.javaee/jboss-javaee6-webapp/pom.properties has failed
+!SUBENTRY 1 org.jboss.ide.eclipse.archives.webtools 4 0 2012-04-20 12:53:46.111
+!MESSAGE Copy of /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp/target/m2e-wtp/web-resources/META-INF/maven/com.miguel.javaee/jboss-javaee6-webapp/pom.xml to /home/miguel/workspace/github.com/javarepo/jboss-javaee6-webapp_workspace/.metadata/.plugins/org.jboss.ide.eclipse.as.core/JBoss_7.1_Runtime_Server1334917051816/tempRemoteDeploy/jboss-javaee6-webapp.war/META-INF/maven/com.miguel.javaee/jboss-javaee6-webapp/pom.xml has failed
+
+!ENTRY org.jboss.ide.eclipse.as.ui 1 0 2012-04-20 12:53:52.458
+!MESSAGE Module jboss-javaee6-webapp on JBoss 7.1 Runtime Server not ready to be shown in web browser. Waiting...
+
+!ENTRY org.eclipse.wst.server.core 4 0 2012-04-20 12:55:24.619
+!MESSAGE Server JBoss 7.1 Runtime Server failed to stop.
