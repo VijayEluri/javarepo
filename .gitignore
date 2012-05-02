@@ -1,2 +1,6 @@
 /NetQuiz/target/
 /tickets/target/
+.metadata
+.settings
+target
+build
