@@ -5,3 +5,6 @@
 target
 build
 RemoteSystemsTempFiles
+.classpath
+.factorypath
+*~
