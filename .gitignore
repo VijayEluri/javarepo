@@ -8,3 +8,4 @@ RemoteSystemsTempFiles
 .classpath
 .factorypath
 *~
+nbactions.xml
