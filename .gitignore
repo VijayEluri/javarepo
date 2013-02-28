@@ -9,3 +9,4 @@ RemoteSystemsTempFiles
 .factorypath
 *~
 nbactions.xml
+*.log
