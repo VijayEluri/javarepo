@@ -1,0 +1,3 @@
+<jboss-web>
+  <context-root>/MRG-M-PoC-web</context-root>
+</jboss-web>

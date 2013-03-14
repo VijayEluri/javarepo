@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/default.xhtml">
+    <ui:define name="content">
+        <h1>Welcome to MRG-M!</h1>
+
+        <div>
+            <p>You have successfully deployed the MRG-M PoC.</p>
+        </div>
+
+        <h:form id="reg">
+            <h2>Send a Message</h2>
+            <h:panelGrid columns="3" columnClasses="titleCell">
+                <h:outputLabel for="message" value="Message:" />
+                <h:inputText id="message"
+                             value="#{memberController.message}" />
+                <h:selectOneMenu value="#{memberController.scenario}">
+                    <f:selectItem itemValue="scenario1"
+                                  itemLabel="Scenario 1" />
+                    <f:selectItem itemValue="scenario2"
+                                  itemLabel="Scenario 2" />
+                    <f:selectItem itemValue="scenario3"
+                                  itemLabel="Scenario 3" />
+                    <f:selectItem itemValue="scenario4"
+                                  itemLabel="Scenario 4" />
+                </h:selectOneMenu>
+            </h:panelGrid>
+            <h:panelGrid columns="3">
+                <h:commandButton id="send"
+                                 action="#{memberController.send}" value="Send"
+                                 styleClass="register" />
+                <h:messages styleClass="messages" errorClass="invalid"
+                            infoClass="valid" warnClass="warning"
+                            globalOnly="true" />
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>
