@@ -2,8 +2,6 @@ package hello;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
 
 /**
  * @author Miguel Reyes
@@ -16,19 +14,7 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
  * ComponentScan tells Spring to look for other components, configurations, and services in the the hello package, allowing it to find the GreetingController
  */
 @SpringBootApplication
-public class Application extends SpringBootServletInitializer {
-
-    /**
-     * Enables traditional deployment to a Tomcat container. Remove 'extends' and this method if container deployment is not needed.
-     * http://docs.spring.io/spring-boot/docs/current/reference/html/howto-traditional-deployment.html
-     *
-     * @param application SpringApplicationBuilder
-     * @return SpringApplicationBuilder
-     */
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Application.class);
-    }
+public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

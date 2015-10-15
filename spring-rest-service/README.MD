@@ -5,5 +5,5 @@ gradle bootRun
 
 Or:
 ```
-java -jar spring-rest-service.jar
+java -jar build/lib/spring-rest-service.jar
 ```
