@@ -1,4 +1,4 @@
-package samples.mix;
+package samples.datastructures;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -87,8 +87,10 @@ public class DataStructures {
         hashMap.put("c", "test");
 
         for (String key : hashMap.keySet()) {
-            System.out.println("key: " + key);
+            System.out.print(key + " ");
         }
+
+        System.out.println("");
 
         Map<String, String> treeMap = new TreeMap<>();
         treeMap.put("hello", "there");
@@ -97,7 +99,7 @@ public class DataStructures {
         treeMap.put("c", "test");
 
         for (String key : treeMap.keySet()) {
-            System.out.println("treeKey: " + key);
+            System.out.print(key + " ");
         }
 
 
